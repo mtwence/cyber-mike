@@ -12,7 +12,6 @@ export default function Home() {
       <Head>
         <title>Cyber Mike</title>
       </Head>
-      <h1 className="p-10 text-red-500">Hello is this thing on???</h1>
        
       {/* Header */}
         <Header />
