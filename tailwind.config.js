@@ -1,3 +1,5 @@
+const { transform } = require('typescript');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,8 +11,18 @@ module.exports = {
     extend: {
       animation: {
         'spin-slow': 'spin 10s linear infinite',
+        'spin-slower': 'spin 20s linear infinite',
+        'spin-sm': 'spin .5s linear infinite',
+        'reverse-spin': 'reverse-spin 10s linear infinite'
       },
-    },
-    plugins: [],
+      keyframes: {
+        'reverse-spin': {
+          from: {
+            transform: 'rotate(360deg)'
+          }
+        }
+      },
+      plugins: [],
+    }
   }
 }

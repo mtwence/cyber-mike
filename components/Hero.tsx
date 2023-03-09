@@ -15,12 +15,14 @@ function Hero({ }: Props) {
     })
     return (
         <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-            <BackgroundCircles/>
+            <BackgroundCircles />
+            <img src='http://aazealh.net/Divers/Face/Gutsface16.jpg' className=' relative rounded-full  h-32 w-32 mx-auto object-cover' />
+            <h2 className='text-md uppercase text-stone-400 pb-2 tracking-[10px]'>Aspiring Software Developer/Designer</h2>
             <h1>
                 <span>{text}</span>
                 <Cursor cursorColor='#ea580c' />
             </h1>
-        </div> 
+        </div>
     )
 }
 
