@@ -10,12 +10,12 @@ function BackgroundCircles({ }: Props) {
             opacity:0,
         }}
         animate={{
-            scale:[1,2,2,3,1],
+            scale:[1,2,2.5,3,1],
             opacity:[.1,.2,.4,.8,.1, 1],
             borderRadius:["20%", "20%","50%","80%","20%"]
         }}
         transition={{
-            duration:2
+            duration:3
         }}
         className='relative flex justify-center items-center'>
             <div className='absolute border border-stone-500 rounded-full h-[1300px] w-[1300px] mt-52 '/>
@@ -31,13 +31,13 @@ function BackgroundCircles({ }: Props) {
                         <div className='flex h-[8px] w-[8px] rounded-full bg-stone-100 -m-4'></div>
                     </div>
                 </div>
-                <div className='absolute border border-stone-500 rounded-full h-[128px] w-[128px] -ml-4 -mt-28 '/>
+                <div className='absolute border-4 border-dashed border-stone-500 rounded-full h-[128px] w-[128px] -ml-4 -mt-28 '/>
                 <div className='absolute border border-stone-500 rounded-full h-[168px] w-[168px] -ml-[36px] -mt-[132px] '/>
             </div>
             <div className='absolute border-8 border-stone-300 rounded-full h-[1750px] w-[1750px] mt-52 animate-pulse z-0' />
             <div className='absolute border border-amber-200 rounded-full h-[2200px] w-[2200px] mt-52 animate-ping' />
             <div className='absolute border-4 border-double border-yellow-400 rounded-full h-[2000px] w-[2000px] mt-52 animate-pulse ' />
-            <div className='absolute border-dashed border-8 border-stone-600 rounded-full h-[2025px] w-[2025px] mt-52 animate-spin-slower' />
+            <div className='absolute border-dashed border-8 border-stone-600 rounded-full h-[2029px] w-[2029px] mt-52 animate-spin-slower' />
             <div className='absolute border-4 border-double border-orange-400 rounded-full h-[2050px] w-[2050px] mt-52 animate-pulse ' />
         </motion.div>
     )
