@@ -24,20 +24,20 @@ function Header({ }: Props) {
         <SocialIcon
           url="https://github.com/mtwence"
           bgColor='transparent'
-          fgColor='#a8a29e'
-          className="hover:bg-stone-600 hover:rounded-lg"
+          fgColor='#065f46'
+          className="socials"
         />
         <SocialIcon
           url="https://www.linkedin.com/in/michael-wence/"
           bgColor='transparent'
-          fgColor='#a8a29e'
-          className="hover:bg-stone-600 hover:rounded-lg"
+          fgColor='#065f46'
+          className="socials"
         />
         <SocialIcon
           url="https://www.instagram.com/gleepys.oeuvres/"
           bgColor='transparent'
-          fgColor='#a8a29e'
-          className="hover:bg-stone-600 hover:rounded-lg"
+          fgColor='#065f46'
+          className="socials"
         />
 
       </motion.div>
@@ -53,14 +53,15 @@ function Header({ }: Props) {
           scale: 1,
         }}
         transition={{ duration: 2, type: "spring", bounce: .5 }}
-        className='flex flex-row items-center text-stone-400 cursor-pointer hover:bg-stone-600 hover:rounded-lg'>
+        className='flex flex-row items-center text-#065f46 cursor-pointer hover:bg-amber-300 hover:rounded-lg'>
+    
         <SocialIcon
           network="email"
           bgColor='transparent'
-          fgColor='#ea580c'
+          fgColor='#065f46'
 
         />
-        <p className='uppercase hidden md:inline-flex text-sm text-stone-400 mr-4'>Hit My Line</p>
+          <p className='uppercase hidden md:inline-flex text-sm text-emerald-800 mr-4 font-medium font-arcade '>Hit My Line :)</p>
       </motion.div>
     </header>
   )

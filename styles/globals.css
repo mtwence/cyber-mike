@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.cdnfonts.com/css/karmatic-arcade');
+
 @layer components {
     .navButton {
-        @apply px-4 py-2 border border-transparent rounded-full uppercase text-sm tracking-widest text-stone-500 transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-stone-600 duration-300 hover:text-stone-200 mx-2
+        @apply px-4 py-2 border border-transparent rounded-full uppercase text-sm font-semibold tracking-widest text-emerald-800 transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-amber-300 duration-300  mx-2
     }
+
+    .socials {
+        @apply hover:bg-amber-300 hover:rounded-lg 
+    }
+
+    .headings {
+       @apply absolute top-24 mt-10 uppercase tracking-[20px] text-orange-500 font-medium text-2xl font-arcade animate-bounce
+    }
+
+   
 }
+
+

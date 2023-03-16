@@ -9,6 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'matrix': ['"Press Start 2P"', 'sans-serif'],
+        'arcade': ['"Karmatic Arcade"', 'sans-serif']
+      },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
         'spin-slower': 'spin 20s linear infinite',
@@ -26,3 +30,4 @@ module.exports = {
     }
   }
 }
+

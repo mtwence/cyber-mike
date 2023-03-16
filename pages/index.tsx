@@ -5,21 +5,27 @@ import styles from '@/styles/Home.module.css'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+
 export default function Home() {
   return (
-    <div className='bg-stone-900 text-white h-screen snap-y snap-mandatory overflow-scroll z-0'>
+    <div className='bg-amber-50 text-white h-screen snap-y snap-mandatory overflow-scroll z-0'>
       <Head>
         <title>Cyber Mike</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+          @import url('https://fonts.cdnfonts.com/css/karmatic-arcade');
+        </style>
+       
       </Head>
-      
-      <Header/>
+
+      <Header />
 
       <section id="hero" className='snap-start'>
-      <Hero/> 
+        <Hero />
       </section>
 
-      <section id="hero" className='snap-center'>
-        <About/>
+      <section id="about" className='snap-center'>
+        <About />
       </section>
       {/* Experiences */}
 
@@ -28,6 +34,6 @@ export default function Home() {
       {/* Projects */}
 
       {/* Contact */}
-    </div> 
+    </div>
   )
 }
