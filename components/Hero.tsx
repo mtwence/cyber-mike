@@ -13,17 +13,18 @@ function Hero({ }: Props) {
             ],
         loop: 0,
         delaySpeed: 2000,
+    
          
         
     })
     return (
         <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
             <BackgroundCircles />
-            <img src='http://aazealh.net/Divers/Face/Gutsface16.jpg' className=' relative rounded-full  h-32 w-32 mx-auto object-cover' />
+            <img src='http://aazealh.net/Divers/Face/Gutsface16.jpg' className=' relative rounded-full  h-48 w-48 mx-auto object-cover' />
             <h2 className='text-md font-medium uppercase text-stone-500 pb-2 tracking-[10px]'>Aspiring Software Developer/Designer</h2>
             <h1>
                 <span id='heroText' className='text-3xl text-orange-500 font-bold font-matrix'>{text}</span>
-                <Cursor cursorColor='#ea580c' />
+                <Cursor cursorColor='black' />
             </h1>
             <div className='pt-5 z-10'>
                 <Link href="#about">

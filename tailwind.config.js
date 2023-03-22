@@ -9,6 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage:{
+        'clouds': "url('/cloudzz.png')",  
+        'xp': "url('/xp.png')",
+        'epic': "url('/epic-campus.jpg')",
+      },
       fontFamily: {
         'matrix': ['"Press Start 2P"', 'sans-serif'],
         'arcade': ['"Karmatic Arcade"', 'sans-serif']
@@ -30,4 +35,3 @@ module.exports = {
     }
   }
 }
-

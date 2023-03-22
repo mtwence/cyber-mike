@@ -15,7 +15,7 @@
     }
 
     .headings {
-       @apply absolute top-24 mt-10 uppercase tracking-[20px] text-orange-500 font-medium text-2xl font-arcade animate-bounce
+       @apply absolute top-24 uppercase tracking-[20px] text-orange-500 font-medium text-2xl font-arcade animate-bounce
     }
 
    

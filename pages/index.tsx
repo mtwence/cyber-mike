@@ -5,6 +5,9 @@ import styles from '@/styles/Home.module.css'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import Experience from '@/components/Experience'
+import Skills from '@/components/Skills'
+import Projects from '@/components/Projects'
 
 export default function Home() {
   return (
@@ -15,7 +18,7 @@ export default function Home() {
           @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
           @import url('https://fonts.cdnfonts.com/css/karmatic-arcade');
         </style>
-       
+
       </Head>
 
       <Header />
@@ -24,14 +27,21 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section id="about" className='snap-center'>
+      <section id="about" className='snap-center bg-clouds'>
         <About />
       </section>
-      {/* Experiences */}
 
-      {/* Skills */}
+      <section id="experience" className='snap-center bg-cloudsw'>
+        <Experience />
+      </section>
 
-      {/* Projects */}
+      <section id='skills' className='snap-start bg-clouds'>
+        <Skills />
+      </section>
+
+      <section id='projects' className='snap-start'>
+        <Projects />
+      </section>
 
       {/* Contact */}
     </div>
