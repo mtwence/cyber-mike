@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -12,7 +11,7 @@ import ContactMe from "@/components/ContactMe";
 
 export default function Home() {
   return (
-    <div className="bg-amber-50 text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <div className="bg-amber-50 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar --webkit-scrollbar-thumb-emerald-500">
       <Head>
         <title>Cyber Mike</title>
         <style>
@@ -36,7 +35,7 @@ export default function Home() {
         <Experience />
       </section>
 
-      <section id="skills" className="snap-start bg-clouds">
+      <section id="skills" className="snap-start bg-plane">
         <Skills />
       </section>
 

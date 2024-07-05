@@ -13,10 +13,13 @@ module.exports = {
         'clouds': "url('/cloudzz.png')",  
         'xp': "url('/xp.png')",
         'epic': "url('/epic-campus.jpg')",
+        'plane': "url('/plane.svg')"
       },
       fontFamily: {
         'matrix': ['"Press Start 2P"', 'sans-serif'],
-        'arcade': ['"Karmatic Arcade"', 'sans-serif']
+        'arcade': ['"Karmatic Arcade"', 'sans-serif'],
+        'game': ["game", 'sans-serif'],
+
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
@@ -31,7 +34,9 @@ module.exports = {
           }
         }
       },
-      plugins: [],
+      plugins: [
+        require('tailwind-scrollbar'),
+      ],
     }
   }
 }

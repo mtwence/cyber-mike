@@ -1,6 +1,7 @@
 import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion, MotionConfig } from "framer-motion"
+import Link from 'next/link'
 
 type Props = {}
 
@@ -61,7 +62,9 @@ function Header({ }: Props) {
           fgColor='#065f46'
 
         />
-          <p className='uppercase hidden md:inline-flex text-sm text-emerald-800 mr-4 font-medium font-arcade '>Hit My Line :)</p>
+           <Link href="#contact">
+          <button className='uppercase hidden md:inline-flex text-md text-emerald-800 mr-4 font-large font-game text-center mx-auto'>Hit My Line =)</button>
+          </Link>
       </motion.div>
     </header>
   )
