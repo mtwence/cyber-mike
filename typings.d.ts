@@ -19,8 +19,8 @@ interface Image {
     };
 }
 
-export interface PageInfo extends SanityBody {
-    _type: "pageInfo"
+export interface PageDetails extends SanityBody {
+    _type: "pageDetails"
     address: string;
     backgroundInformation: string;
     email: string;
@@ -70,10 +70,6 @@ export interface Project extends SanityBody {
     technologies: Technology[];
 }
 
-export interface Social extends SanityBody {
-    _type: "social";
-    title: string;
-    url: string;
-}
+
 
 

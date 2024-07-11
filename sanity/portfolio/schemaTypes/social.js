@@ -10,7 +10,7 @@ export default {
             type: "string"
         },
         {
-            name: "link",
+            name: "url",
             title: "url",
             type: "url",
             

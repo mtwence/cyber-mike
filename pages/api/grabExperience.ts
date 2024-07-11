@@ -12,7 +12,7 @@ technologies[] ->
 
 
 type Data = {
-    xps: Experience []
+    experiences: Experience []
 }
 
 
@@ -20,6 +20,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
- const xps: Experience[] = await client.fetch(query);
- res.status(200).json({xps})
+ const experiences: Experience[] = await client.fetch(query);
+ res.status(200).json({experiences})
 }

@@ -2,10 +2,13 @@ import React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion, MotionConfig } from "framer-motion"
 import Link from 'next/link'
+import { Social } from '@/typings'
 
-type Props = {}
+type Props = {
+  socials: Social[];
+}
 
-function Header({ }: Props) {
+function Header({ socials  }: Props) {
   return (
     <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto xl:items-center z-50'>
       <motion.div
@@ -22,13 +25,16 @@ function Header({ }: Props) {
         transition={{ duration: 2, type: "spring", bounce: .5 }}
         className='flex flex-row items-center' >
         {/* Icons for Socials */}
+       {socials.map((socials) => (
         <SocialIcon
-          url="https://github.com/mtwence"
+          key={socials._id}
+          url={socials.url}
           bgColor='transparent'
           fgColor='#065f46'
           className="socials"
         />
-        <SocialIcon
+  ))}
+        {/* <SocialIcon
           url="https://www.linkedin.com/in/michael-wence/"
           bgColor='transparent'
           fgColor='#065f46'
@@ -39,7 +45,7 @@ function Header({ }: Props) {
           bgColor='transparent'
           fgColor='#065f46'
           className="socials"
-        />
+        /> */}
 
       </motion.div>
       <motion.div

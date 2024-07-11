@@ -4,7 +4,7 @@ import XPCards from './XPCards'
 
 type Props = {}
 
-function Experience({ }: Props) {
+function WorkXp({ }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,5 +26,5 @@ function Experience({ }: Props) {
   )
 }
 
-export default Experience
+export default WorkXp
 
