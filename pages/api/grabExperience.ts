@@ -2,20 +2,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { groq } from 'next-sanity'
 import { client } from '../../sanity'
-import {Skill} from '../../typings'
+import {Experience} from '../../typings'
 
-const query = groq`*[_type == "skill"]`
+const query = groq`*[_type == "experience"] {
+...,
+technologies[] ->
+}
+`
 
 
 type Data = {
-    skills: Skill []
-} 
+    xps: Experience []
+}
 
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
- const skills: Skill[] = await client.fetch(query);
- res.status(200).json({skills})
+ const xps: Experience[] = await client.fetch(query);
+ res.status(200).json({xps})
 }
