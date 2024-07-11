@@ -6,6 +6,11 @@ export default {
     type: "document",
     fields: [
         {
+            name: "company",
+            title: "Company",
+            type: "string"
+        },
+        {
             name: "jobTitle",
             title: "JobTitle",
             type: "string"
@@ -29,7 +34,7 @@ export default {
             type: "date",
         },
         {
-            name: "currentlyworking",
+            name: "currentlyWorking",
             title: "CurrentlyWorking",
             type: "boolean",
         },
