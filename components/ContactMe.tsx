@@ -31,7 +31,7 @@ function ContactMe({}: Props){
         {/* <h4 className=' text-4xl font-semibold text-center text-amber-300 decoration-[#065f46]/75 underline'>I'd love to connect. </h4> */}
         
         <div className='flex items-center space-x-5 justify-center'>
-            <MapPinIcon className='text-[#065f46] h-7 w-7 animate-pulse'/>
+            <MapPinIcon className='text-[#065f46] h-7 w-7 animate-pulse'/> 
             <p className='text-xl text-[#065f46] font-game'>Greater Philadelphia Area</p>
         </div>
         <div className='flex items-center space-x-5 justify-center'>
