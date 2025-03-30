@@ -27,7 +27,7 @@ type Props = {
 
 const Home = ({pageDetails, experience, projects, skills, socials}: Props) => {
   return (
-    <div className="bg-amber-50 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar --webkit-scrollbar-thumb-emerald-500">
+    <div className="text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar --webkit-scrollbar-thumb-emerald-500">
       <Head>
         <title>Cyber Mike</title>
         <style>
@@ -39,20 +39,20 @@ const Home = ({pageDetails, experience, projects, skills, socials}: Props) => {
 
       <Header socials={socials}/>
 
-      <section id="hero" className="snap-start">
-        <Hero />
+      <section id="hero" className="snap-start bg-night">
+        <Hero pageDetails={pageDetails}/>
       </section>
 
-      <section id="about" className="snap-center bg-clouds">
+      <section id="about" className="snap-center bg-nightday">
         <About />
       </section>
 
-      <section id="experience" className="snap-center bg-cloudsw">
+      <section id="experience" className="snap-center bg-amber-50 bg-clouds">
         <WorkXp />
       </section>
 
       <section id="skills" className="snap-start bg-plane">
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className="snap-start">
@@ -62,7 +62,6 @@ const Home = ({pageDetails, experience, projects, skills, socials}: Props) => {
       <section id="contact" className="snap-start">
         <ContactMe />
       </section>
-      
     </div>
   );
 }
@@ -70,7 +69,7 @@ const Home = ({pageDetails, experience, projects, skills, socials}: Props) => {
 export default Home;
 
 export async function getStaticProps () {
-  const pageDetails: PageDetails [] = await fetchPageDetails();
+  const pageDetails: PageDetails = await fetchPageDetails();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();

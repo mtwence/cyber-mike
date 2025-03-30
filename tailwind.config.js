@@ -14,7 +14,9 @@ module.exports = {
         'clouds': "url('/cloudzz.png')",  
         'xp': "url('/xp.png')",
         'epic': "url('/epic-campus.jpg')",
-        'plane': "url('/plane.svg')"
+        'plane': "url('/plane.svg')",
+        'night': "url('/nightsky.svg')",
+        'nightday': "url('/night-day.svg')",
       },
       fontFamily: {
         'matrix': ['"Press Start 2P"', 'sans-serif'],
