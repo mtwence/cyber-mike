@@ -19,6 +19,14 @@ interface Image {
     };
 }
 
+interface File {
+    _type: "file";
+    asset: {
+        _ref: string;
+        _type: "reference";
+    };
+}
+
 export interface PageDetails extends SanityBody {
     _type: "pageDetails"
     address: string;
@@ -29,14 +37,20 @@ export interface PageDetails extends SanityBody {
     name: string;
     phoneNumber: string;
     profilePic: Image;
+    resume: File;
 }
-
+export interface Technology extends SanityBody {
+    _type: "skill";
+    skillImage: Image;
+    progress: number;
+    skillTitle: string;
+}
 
 export interface Skill extends SanityBody {
     _type: "skill";
     skillImage: Image;
     progress: number;
-    title: string;
+    skillTitle: string;
 }
 
 export interface Experience extends SanityBody {
@@ -60,6 +74,14 @@ export interface Project extends SanityBody {
     linktoBuild: string;
     summary: string;
     technologies: Technology[];
+}
+
+export interface Education extends SanityBody {
+    _type: "education";
+    school: string;
+    concentration: string;
+    finishDate: string;
+    schoolImage: Image;
 }
 
 

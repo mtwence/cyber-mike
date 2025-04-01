@@ -22,21 +22,26 @@ export default {
             }
         },
         {
-            name: "backgroundInfo",
-            title: "BackgroundInfo",
+            name: "backgroundInformation",
+            title: "BackgroundInformation",
             type: "string",
         },
         {
-            name: "profileImage",
-            title: "ProfileImage",
+            name: "profilePic",
+            title: "ProfilePic",
             type: "image",
             options: {
                 hotspot: true,
             }
         },
         {
-            name: "phone",
-            title: "Phone",
+            name: "phoneNumber",
+            title: "PhoneNumber",
+            type: "string",
+        },
+        {
+            name: "email",
+            title: "Email",
             type: "string",
         },
         {
@@ -49,6 +54,11 @@ export default {
             title: "Socials",
             type: "array",
             of: [{type: "reference", to: {type: "social"}}]
+        },
+        {
+            name: "resume",
+            title: "Resume",
+            type: "file",
         },
         
     ]

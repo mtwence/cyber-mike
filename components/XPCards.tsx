@@ -1,32 +1,58 @@
 import React from "react";
-import { motion, MotionConfig } from "framer-motion";
+import { motion } from "framer-motion";
+import { Experience } from "@/typings";
+import { urlFor } from "@/sanity";
+import Image from 'next/image';
 
-type Props = {};
+type Props = {
+  experience: Experience;
+  key?: string;
+};
 
-function XPCards({}: Props) {
+function XPCards({ experience }: Props) {
+  console.log('Experience data:', experience);
   return (
-    <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden  bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
-      <div >
-        <img className="w-[300px] md:w-[500px] xl:w-[700px] max-h-[250px] rounded-t-lg" src="./epic-campus.jpg" alt="" />
+    <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-65 cursor-pointer transition-opacity duration-200 overflow-hidden bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
+      <div className="relative w-full h-[250px]">
+        <Image
+          className="rounded-t-lg object-cover object-center"
+          src={experience.companyImage || '/placeholder-company.png'}
+          alt={experience.company}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/placeholder-company.png';
+          }}
+        />
       </div>
       <div className="px-0 md:px-10 pb-3">
-      <h4 className='text-stone-500 text-4xl font-light'>Quality Manager</h4>
-            <p className='text-stone-600 font-bold uppercase text-2xl mt-1'>Epic Systems</p>
-            <div className='flex space-x-2 my-2'>
-             <img className='h-9 w-12 rounded-full'src="https://assets.stickpng.com/images/61045e1a9cd69c000418c11b.png" alt="" />
-           </div>
-            <p className='uppercase py-2 text-stone-600'>started-finished</p>
+        <h4 className="text-stone-500 text-4xl font-light">{experience.jobTitle}</h4>
+        <p className="text-stone-600 font-bold uppercase text-2xl mt-1">{experience.company}</p>
+        <div className="flex space-x-2 my-2">
+          {experience.technologies.map((technology) => (
+            <div key={technology._id} className="relative h-9 w-12">
+              <Image
+                className="rounded-full object-cover object-center"
+                src={urlFor(technology.skillImage).url()}
+                alt={technology.skillTitle}
+                fill
+                sizes="48px"
+              />
+            </div>
+          ))}
+        </div>
+        <p className="uppercase py-2 text-stone-600">
+          {experience.startDate} - {experience.endDate || "Present"}
+        </p>
 
-          <ul className='list-disc space-y-2 ml-5 text-lg text-stone-500'>
-               <li>Points</li>
-                 <li>Points</li>
-                 <li>Points</li>
-                <li>Points</li>
-               <li>Points</li>
-            </ul>
-        <div
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-amber-50 bg-emerald-800 rounded-lg hover:bg-amber-300"
-        >Learn More
+        <ul className="list-disc space-y-2 ml-5 text-lg text-stone-500">
+          {experience.points.map((point, index) => (
+            <li key={index}>{point}</li>
+          ))}
+        </ul>
+        <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-amber-50 bg-emerald-800 rounded-lg hover:bg-amber-300">
+          Learn More
           <svg
             aria-hidden="true"
             className="w-4 h-4 ml-2 -mr-1"

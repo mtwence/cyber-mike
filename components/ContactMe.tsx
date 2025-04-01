@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageDetails } from '@/typings'
 
 type Inputs = {
 name: string;
@@ -8,11 +9,13 @@ email: string;
 subject: string;
 message: string;
 };
-type Props = {}
+type Props = {
+    pageDetails: PageDetails
+}
 
     
 
-function ContactMe({}: Props){
+function ContactMe({pageDetails}: Props){
 
     const { register, handleSubmit, } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = (formData) => {
@@ -32,15 +35,15 @@ function ContactMe({}: Props){
         
         <div className='flex items-center space-x-5 justify-center'>
             <MapPinIcon className='text-[#065f46] h-7 w-7 animate-pulse'/> 
-            <p className='text-xl text-[#065f46] font-game'>Greater Philadelphia Area</p>
+            <p className='text-xl text-[#065f46] font-game'>{pageDetails?.address}</p>
         </div>
         <div className='flex items-center space-x-5 justify-center'>
             <PhoneIcon className='text-[#065f46] h-7 w-7 animate-pulse'/>
-            <p className='text-xl text-[#065f46] font-game'>+1 (856) 685-6120</p>
+            <p className='text-xl text-[#065f46] font-game'>{pageDetails?.phoneNumber}</p>
         </div>
         <div className='flex items-center space-x-5 justify-center'>
             <EnvelopeIcon className='text-[#065f46] h-7 w-7 animate-pulse '/>
-            <p className='text-xl text-[#065f46] font-game'>michaelwence@proton.me</p>
+            <p className='text-xl text-[#065f46] font-game'>{pageDetails?.email}</p>
         </div>
       
 

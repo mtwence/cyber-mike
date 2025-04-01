@@ -3,5 +3,6 @@ import pageDetails from "./pageDetails";
 import projects from "./projects";
 import skills from "./skills";
 import social from "./social";
+import education from "./education";
 
-export const schemaTypes = [skills, pageDetails, social, experience, projects]
+export const schemaTypes = [skills, pageDetails, social, experience, projects, education]

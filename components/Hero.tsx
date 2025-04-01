@@ -4,6 +4,7 @@ import BackgroundCircles from './BackgroundCircles'
 import Link from 'next/link'
 import { PageDetails } from '@/typings'
 import {urlFor} from '../sanity'
+import Image from 'next/image'
 
 type Props = {
     pageDetails: PageDetails
@@ -12,7 +13,7 @@ type Props = {
 function Hero({pageDetails }: Props) {
     const [text] = useTypewriter({
         words: [
-            `HOWDY, THE NAME'S ${pageDetails?.name}`,
+            `HOWDY, SPACE COWBOY, THE NAME'S ${pageDetails?.name}`,
             'AT THE CENTER OF THE UNIVERSE...',
             'IS ME !!!',
             ],
@@ -23,7 +24,15 @@ function Hero({pageDetails }: Props) {
         <div className='relative h-screen flex flex-col space-y-8 items-center justify-center text-center'>
             <BackgroundCircles />
             <div className='relative z-10 pointer-events-none'>
-                <img src={urlFor(pageDetails?.heroImage).url()} className='relative rounded-full h-48 w-48 mx-auto object-cover' />
+                <div className='relative h-48 w-48 mx-auto'>
+                    <Image 
+                        src={urlFor(pageDetails?.heroImage).url()} 
+                        alt="Hero"
+                        fill
+                        sizes="192px"
+                        className='rounded-full object-cover'
+                    />
+                </div>
                 <h2 className='text-md font-medium uppercase text-stone-500 pb-2 tracking-[10px]'>Aspiring Software Developer/Designer</h2>
                 <h1>
                     <span id='heroText' className='text-3xl text-orange-500 font-bold font-matrix'>{text}</span>

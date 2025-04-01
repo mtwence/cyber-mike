@@ -5,14 +5,21 @@ import { client } from '../../sanity'
 import {Experience} from '../../typings'
 
 const query = groq`*[_type == "experience"] {
-...,
-technologies[] ->
+  _id,
+  company,
+  jobTitle,
+  "companyImage": companyImage.asset->url,
+  startDate,
+  endDate,
+  currentlyWorking,
+  points,
+  technologies[] ->
 }
 `
 
 
 type Data = {
-    experiences: Experience []
+    experience: Experience []
 }
 
 
@@ -20,6 +27,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
- const experiences: Experience[] = await client.fetch(query);
- res.status(200).json({experiences})
+ const experience: Experience[] = await client.fetch(query);
+ res.status(200).json({experience})
 }
