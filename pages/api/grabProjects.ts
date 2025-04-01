@@ -5,16 +5,27 @@ import { client } from '../../sanity'
 import {Project} from '../../typings'
 
 const query = groq`*[_type == "project"] {
-...,
-technologies[] ->
-}
-`
-
+  _id,
+  projectTitle,
+  summary,
+  websiteLink,
+  repoLink,
+  points,
+  "projectImage": {
+    "asset": projectImage.asset->
+  },
+  "technologies": technologies[]-> {
+    _id,
+    skillTitle,
+    "skillImage": {
+      "asset": skillImage.asset->
+    }
+  }
+}`
 
 type Data = {
-    projects: Project []
+    projects: Project[]
 }
-
 
 export default async function handler(
   req: NextApiRequest,

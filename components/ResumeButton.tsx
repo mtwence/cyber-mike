@@ -36,11 +36,11 @@ const ResumeButton = ({ pageDetails }: { pageDetails: PageDetails }) => {
       }
 
       // Wait for 1500 ms before resetting the animation
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 500));
 
       // Reset the rocket's animation state
       controls.start({ y: 0 }); // Reset to original position without animation
-    }, 500); // Delay for the download to trigger
+    }, 300); // Delay for the download to trigger
   };
 
   return (

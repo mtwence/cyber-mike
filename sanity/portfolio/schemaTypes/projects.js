@@ -1,5 +1,3 @@
-
-
 export default {
     name: "project",
     title: "Project",
@@ -37,10 +35,14 @@ export default {
             of: [{type:"string"}],
         },
         {
-            name: "link",
-            title: "Link",
+            name: "websiteLink",
+            title: "Website Link",
             type: "url",
         },
-        
+        {
+            name: "repoLink",
+            title: "Repository Link",
+            type: "url",
+        },
     ]
 }

@@ -79,7 +79,7 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className="snap-start">

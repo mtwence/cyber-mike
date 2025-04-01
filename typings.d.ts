@@ -16,6 +16,7 @@ interface Image {
     asset: {
         _ref: string;
         _type: "reference";
+        url: string;
     };
 }
 
@@ -76,12 +77,14 @@ export interface Experience extends SanityBody {
 }
 
 export interface Project extends SanityBody {
-    title: string;
+    projectTitle: string;
     _type: "project";
-    image: Image;
-    linktoBuild: string;
+    projectImage: Image;
+    websiteLink: string;
+    repoLink: string;
     summary: string;
     technologies: Technology[];
+    points: string[];
 }
 
 export interface Education extends SanityBody {
