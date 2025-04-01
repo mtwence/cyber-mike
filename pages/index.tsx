@@ -10,6 +10,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import Education from "@/components/Education";
+import ResumeButton from "@/components/ResumeButton";
 import {Experience, PageDetails, Project, Skill, Social, Education as EducationType} from "../typings"
 import { fetchSkills } from "@/utils/fetchSkills";
 import {fetchSocials} from "@/utils/fetchSocials";
@@ -40,6 +41,7 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
       </Head>
 
       <Header socials={socials}/>
+      <ResumeButton pageDetails={pageDetails}/>
 
       <section id="hero" className="snap-start relative">
         <div className="absolute inset-0 bg-space opacity-90"></div>

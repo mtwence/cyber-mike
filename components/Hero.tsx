@@ -51,6 +51,9 @@ function Hero({pageDetails }: Props) {
                     <Link href='#projects'>
                         <button className='navButton'>Projects</button>
                     </Link>
+                    <Link href='#education'>
+                        <button className='navButton'>Education</button>
+                    </Link>
                 </div>
             </div>
         </div>

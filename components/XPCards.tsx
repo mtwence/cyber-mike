@@ -11,12 +11,28 @@ type Props = {
 
 function XPCards({ experience }: Props) {
   console.log('Experience data:', experience);
+  
+  const getLinkUrl = () => {
+    if (!experience.linkUrl) return null;
+    if (experience.linkUrl.type === "url" && experience.linkUrl.url) {
+      return experience.linkUrl.url;
+    } else if (experience.linkUrl.type === "file" && experience.linkUrl.file) {
+      return experience.linkUrl.file.url;
+    }
+    return null;
+  };
+
+  const hasValidLink = experience.linkUrl && 
+    ((experience.linkUrl.type === "url" && experience.linkUrl.url) || 
+     (experience.linkUrl.type === "file" && experience.linkUrl.file)) && 
+    experience.linkTitle;
+
   return (
     <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-65 cursor-pointer transition-opacity duration-200 overflow-hidden bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
       <div className="relative w-full h-[250px]">
         <Image
           className="rounded-t-lg object-cover object-center"
-          src={experience.companyImage || '/placeholder-company.png'}
+          src={urlFor(experience.companyImage).url()}
           alt={experience.company}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -26,7 +42,7 @@ function XPCards({ experience }: Props) {
           }}
         />
       </div>
-      <div className="px-0 md:px-10 pb-3">
+      <div className="px-0 md:px-10 pb-3 flex flex-col h-full">
         <h4 className="text-stone-500 text-4xl font-light">{experience.jobTitle}</h4>
         <p className="text-stone-600 font-bold uppercase text-2xl mt-1">{experience.company}</p>
         <div className="flex space-x-2 my-2">
@@ -51,22 +67,19 @@ function XPCards({ experience }: Props) {
             <li key={index}>{point}</li>
           ))}
         </ul>
-        <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-amber-50 bg-emerald-800 rounded-lg hover:bg-amber-300">
-          Learn More
-          <svg
-            aria-hidden="true"
-            className="w-4 h-4 ml-2 -mr-1"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </div>
+        {hasValidLink && (
+          <div className="mt-8 flex justify-center">
+            <a 
+              href={getLinkUrl() || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-amber-50 bg-emerald-800 rounded-lg hover:bg-amber-300"
+            >
+              {experience.linkTitle}
+              <span className="ml-2">&#128640;</span>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

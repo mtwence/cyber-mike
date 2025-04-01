@@ -8,7 +8,13 @@ const query = groq`*[_type == "education"] {
   school,
   concentration,
   finishDate,
-  "schoolImage": schoolImage.asset->url
+  "schoolImage": schoolImage.asset->url,
+  "linkUrl": {
+    "type": linkUrl.type,
+    "url": linkUrl.url,
+    "file": linkUrl.file.asset->
+  },
+  linkTitle
 }`
 
 type Data = {

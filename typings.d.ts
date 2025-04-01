@@ -25,6 +25,7 @@ interface File {
         _ref: string;
         _type: "reference";
     };
+    url?: string;
 }
 
 export interface PageDetails extends SanityBody {
@@ -39,6 +40,7 @@ export interface PageDetails extends SanityBody {
     profilePic: Image;
     resume: File;
 }
+
 export interface Technology extends SanityBody {
     _type: "skill";
     skillImage: Image;
@@ -53,19 +55,25 @@ export interface Skill extends SanityBody {
     skillTitle: string;
 }
 
+interface LinkUrl {
+    type: "url" | "file";
+    url?: string;
+    file?: File;
+}
+
 export interface Experience extends SanityBody {
     _type: "experience";
     company: string;
-    jobTitle: string;
     companyImage: Image;
+    jobTitle: string;
     startDate: date;
     endDate: date;
     currentlyWorking: boolean;
     points: string[];
     technologies: Technology[];
-
+    linkUrl?: LinkUrl;
+    linkTitle?: string;
 }
-
 
 export interface Project extends SanityBody {
     title: string;
@@ -82,6 +90,8 @@ export interface Education extends SanityBody {
     concentration: string;
     finishDate: string;
     schoolImage: Image;
+    linkUrl?: LinkUrl;
+    linkTitle?: string;
 }
 
 

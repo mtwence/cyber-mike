@@ -13,7 +13,13 @@ const query = groq`*[_type == "experience"] {
   endDate,
   currentlyWorking,
   points,
-  technologies[] ->
+  technologies[] ->,
+  "linkUrl": {
+    "type": linkUrl.type,
+    "url": linkUrl.url,
+    "file": linkUrl.file.asset->
+  },
+  linkTitle
 }
 `
 

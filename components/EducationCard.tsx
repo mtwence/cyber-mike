@@ -2,19 +2,50 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Education } from "@/typings";
 import Image from 'next/image';
+import { urlFor } from '@/sanity';
 
 type Props = {
   education: Education;
 };
 
 function EducationCard({ education }: Props) {
-  console.log('Education data:', education);
+  console.log('Education card data:', {
+    school: education.school,
+    linkUrl: education.linkUrl,
+    linkTitle: education.linkTitle,
+    hasLinkUrl: !!education.linkUrl,
+    linkUrlType: education.linkUrl?.type,
+    linkUrlValue: education.linkUrl?.url || education.linkUrl?.file,
+    hasLinkTitle: !!education.linkTitle
+  });
+  
+  const getLinkUrl = () => {
+    if (!education.linkUrl) return null;
+    if (education.linkUrl.type === "url" && education.linkUrl.url) {
+      return education.linkUrl.url;
+    } else if (education.linkUrl.type === "file" && education.linkUrl.file) {
+      return education.linkUrl.file.url;
+    }
+    return null;
+  };
+
+  const hasValidLink = education.linkUrl && 
+    ((education.linkUrl.type === "url" && education.linkUrl.url) || 
+     (education.linkUrl.type === "file" && education.linkUrl.file)) && 
+    education.linkTitle;
+
+  console.log('Link validation:', {
+    hasValidLink,
+    linkUrl: getLinkUrl(),
+    linkTitle: education.linkTitle
+  });
+
   return (
     <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
       <div className="relative w-full h-[250px]">
         <Image
           className="rounded-t-lg object-cover object-center"
-          src={education.schoolImage}
+          src={urlFor(education.schoolImage).url()}
           alt={education.school}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -30,22 +61,19 @@ function EducationCard({ education }: Props) {
         <p className="uppercase py-2 text-stone-600">
           Graduated: {education.finishDate}
         </p>
-        <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-amber-50 bg-emerald-800 rounded-lg hover:bg-amber-300">
-          Learn More
-          <svg
-            aria-hidden="true"
-            className="w-4 h-4 ml-2 -mr-1"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </div>
+        {hasValidLink && (
+          <div className="mt-8 flex justify-center">
+            <a 
+              href={getLinkUrl() || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-amber-50 bg-emerald-800 rounded-lg hover:bg-amber-300"
+            >
+              {education.linkTitle}
+              <span className="ml-2">&#128640;</span>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
