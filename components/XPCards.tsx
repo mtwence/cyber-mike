@@ -45,28 +45,32 @@ function XPCards({ experience }: Props) {
       <div className="px-0 md:px-10 pb-3 flex flex-col h-full">
         <h4 className="text-stone-500 text-4xl font-light">{experience.jobTitle}</h4>
         <p className="text-stone-600 font-bold uppercase text-2xl mt-1">{experience.company}</p>
-        <div className="flex space-x-2 my-2">
-          {experience.technologies.map((technology) => (
-            <div key={technology._id} className="relative h-9 w-12">
-              <Image
-                className="rounded-full object-cover object-center"
-                src={urlFor(technology.skillImage).url()}
-                alt={technology.skillTitle}
-                fill
-                sizes="48px"
-              />
-            </div>
-          ))}
-        </div>
+        {experience.technologies && experience.technologies.length > 0 && (
+          <div className="flex space-x-2 my-2">
+            {experience.technologies.map((technology) => (
+              <div key={technology._id} className="relative h-9 w-12">
+                <Image
+                  className="rounded-full object-cover object-center"
+                  src={urlFor(technology.skillImage).url()}
+                  alt={technology.skillTitle}
+                  fill
+                  sizes="48px"
+                />
+              </div>
+            ))}
+          </div>
+        )}
         <p className="uppercase py-2 text-stone-600">
           {experience.startDate} - {experience.endDate || "Present"}
         </p>
 
-        <ul className="list-disc space-y-2 ml-5 text-lg text-stone-500">
-          {experience.points.map((point, index) => (
-            <li key={index}>{point}</li>
-          ))}
-        </ul>
+        {experience.points && experience.points.length > 0 && (
+          <ul className="list-disc space-y-2 ml-5 text-lg text-stone-500">
+            {experience.points.map((point, index) => (
+              <li key={index}>{point}</li>
+            ))}
+          </ul>
+        )}
         {hasValidLink && (
           <div className="mt-8 flex justify-center">
             <a 

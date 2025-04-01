@@ -65,25 +65,31 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
       </section>
 
       <section id="education" className="snap-center relative">
-        <div className="absolute inset-0 bg-blend opacity-80"></div>
+        <div className="absolute inset-0 bg-blend opacity-70"></div>
         <div className="relative z-10">
           <Education education={education}/>
         </div>
       </section>
 
       <section id="skills" className="snap-start relative">
-        <div className="absolute inset-0 bg-plane opacity-90"></div>
+        <div className="absolute inset-0 bg-sky opacity-60"></div>
         <div className="relative z-10">
           <Skills skills={skills} />
         </div>
       </section>
 
-      <section id="projects" className="snap-start">
-        <Projects projects={projects} />
+      <section id="projects" className="snap-start relative">
+        <div className="absolute inset-0 bg-mountains opacity-60"></div>
+        <div className="relative z-10">
+          <Projects projects={projects} />
+        </div>
       </section>
 
-      <section id="contact" className="snap-start">
-        <ContactMe pageDetails={pageDetails} />
+      <section id="contact" className="snap-start relative">
+        <div className="absolute inset-0 opacity-20"></div>
+        <div className="relative z-10">
+          <ContactMe pageDetails={pageDetails} />
+        </div>
       </section>
     </div>
   );

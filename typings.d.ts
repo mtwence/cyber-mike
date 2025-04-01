@@ -45,14 +45,14 @@ export interface PageDetails extends SanityBody {
 export interface Technology extends SanityBody {
     _type: "skill";
     skillImage: Image;
-    progress: number;
+    progress: "novice" | "journeyman" | "master";
     skillTitle: string;
 }
 
 export interface Skill extends SanityBody {
     _type: "skill";
     skillImage: Image;
-    progress: number;
+    progress: "novice" | "journeyman" | "master";
     skillTitle: string;
 }
 

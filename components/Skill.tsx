@@ -11,7 +11,31 @@ type Props = {
 }
 
 function Skill({directionLeft, skill}: Props) {
-  console.log('Skill data:', skill);
+  const getProgressColor = (progress: string) => {
+    switch (progress) {
+      case 'novice':
+        return 'bg-green-200';
+      case 'journeyman':
+        return 'bg-orange-200';
+      case 'master':
+        return 'bg-red-200';
+      default:
+        return 'bg-amber-50';
+    }
+  };
+
+  const getProgressText = (progress: string) => {
+    switch (progress) {
+      case 'novice':
+        return 'Novice';
+      case 'journeyman':
+        return 'Journeyman';
+      case 'master':
+        return 'Master';
+      default:
+        return progress;
+    }
+  };
   
   return (
     <div className='group relative flex cursor-pointer'>
@@ -22,20 +46,20 @@ function Skill({directionLeft, skill}: Props) {
         }}
         transition={{duration: 1}}
         whileInView={{opacity:1, x:0}}
-        className='relative w-24 h-24 md:w-32 md:h-32 xl:w-40 xl:h-40'
+        className='relative w-20 h-20 md:w-24 md:h-24 xl:w-28 xl:h-28'
         >
           <Image
             src={urlFor(skill.skillImage).url()}
             alt={skill.skillTitle}
             fill
-            sizes="(max-width: 768px) 96px, (max-width: 1200px) 128px, 160px"
+            sizes="(max-width: 768px) 80px, (max-width: 1200px) 96px, 112px"
             className='rounded-full border-2 border-emerald-800 object-cover filter group-hover:grayscale transition duration-300 ease-in-out'
           />
         </motion.div>
-        <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-amber-50 h-24 w-24 md:w-32 md:h-32 xl:w-40 xl:h-40 rounded-full z-0'>
-            <div className='flex flex-col items-center justify-center h-full space-y-2'>
-                <p className='text-lg font-bold text-stone-600'>{skill.progress}%</p>
-                <p className='text-lg font-bold text-stone-600'>{skill.skillTitle}</p>
+        <div className={`absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out ${getProgressColor(skill.progress)} h-20 w-20 md:w-24 md:h-24 xl:w-28 xl:h-28 rounded-full z-0`}>
+            <div className='flex flex-col items-center justify-center h-full space-y-1'>
+                <p className='text-sm font-bold text-stone-600'>{getProgressText(skill.progress)}</p>
+                <p className='text-sm font-bold text-stone-600'>{skill.skillTitle}</p>
             </div>
         </div>
     </div>

@@ -12,9 +12,15 @@ export default {
         {
             name: "progress",
             title: "Progress",
-            type: "number",
-            description: "Progress of skill from 0 to 100",
-            validation: (Rule) => Rule.min(0).max(100)
+            type: "string",
+            options: {
+                list: [
+                    { title: "Novice", value: "novice" },
+                    { title: "Journeyman", value: "journeyman" },
+                    { title: "Master", value: "master" }
+                ]
+            },
+            description: "Skill proficiency level"
         },
         {
             name: "skillImage",
