@@ -22,6 +22,7 @@ module.exports = {
         'mountains': "url('/mountains.png')",
         'space': "url('/space3.png')",
         'spaceold': "url('/spaceold.png')",
+        'land': "url('/land.png')",
       },
       fontFamily: {
         'matrix': ['"Press Start 2P"', 'sans-serif'],

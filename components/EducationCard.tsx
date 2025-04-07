@@ -42,13 +42,13 @@ function EducationCard({ education }: Props) {
 
   return (
     <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
-      <div className="relative w-full h-[250px]">
+      <div className="relative w-full h-[300px] overflow-hidden">
         <Image
-          className="rounded-t-lg object-cover object-center"
+          className="rounded-t-lg object-cover w-full h-full"
           src={urlFor(education.schoolImage).url()}
           alt={education.school}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 768px) 300px, (max-width: 1200px) 400px, 450px"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.src = '/placeholder-school.png';

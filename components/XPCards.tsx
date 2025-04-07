@@ -29,32 +29,34 @@ function XPCards({ experience }: Props) {
 
   return (
     <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-65 cursor-pointer transition-opacity duration-200 overflow-hidden bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
-      <div className="relative w-full h-[250px]">
-        <Image
-          className="rounded-t-lg object-cover object-center"
-          src={urlFor(experience.companyImage).url()}
-          alt={experience.company}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = '/placeholder-company.png';
-          }}
-        />
+      <div className="relative w-full h-[200px] md:h-[250px] xl:h-[300px] overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center bg-stone-100">
+          <Image
+            className="object-cover w-full h-full"
+            src={urlFor(experience.companyImage).url()}
+            alt={experience.company}
+            fill
+            sizes="(max-width: 768px) 300px, (max-width: 1200px) 400px, 450px"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = '/placeholder-company.png';
+            }}
+          />
+        </div>
       </div>
       <div className="px-0 md:px-10 pb-3 flex flex-col h-full">
         <h4 className="text-stone-500 text-4xl font-light">{experience.jobTitle}</h4>
         <p className="text-stone-600 font-bold uppercase text-2xl mt-1">{experience.company}</p>
         {experience.technologies && experience.technologies.length > 0 && (
-          <div className="flex space-x-2 my-2">
+          <div className="flex flex-wrap gap-2 my-4">
             {experience.technologies.map((technology) => (
-              <div key={technology._id} className="relative h-9 w-12">
+              <div key={technology._id} className="relative h-8 w-8">
                 <Image
-                  className="rounded-full object-cover object-center"
+                  className="object-contain"
                   src={urlFor(technology.skillImage).url()}
                   alt={technology.skillTitle}
                   fill
-                  sizes="48px"
+                  sizes="32px"
                 />
               </div>
             ))}

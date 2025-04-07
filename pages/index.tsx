@@ -86,7 +86,7 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
       </section>
 
       <section id="contact" className="snap-start relative">
-        <div className="absolute inset-0 opacity-20"></div>
+        <div className="absolute inset-0 bg-land opacity-60"></div>
         <div className="relative z-10">
           <ContactMe pageDetails={pageDetails} />
         </div>
