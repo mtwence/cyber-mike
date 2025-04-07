@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion"
 import EducationCard from './EducationCard'
-import { Education } from '@/typings'
+import type { Education } from '@/typings'
 
 type Props = {
   education: Education[];

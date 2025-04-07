@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Education } from "@/typings";
+import type { Education } from "@/typings";
 import Image from 'next/image';
 import { urlFor } from '@/sanity';
 

@@ -35,8 +35,8 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
         <title>Cyber Mike</title>
         <style>
           @import
-          url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-          @import url('https://fonts.cdnfonts.com/css/karmatic-arcade');
+          url(&apos;https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&apos;);
+          @import url(&apos;https://fonts.cdnfonts.com/css/karmatic-arcade&apos;);
         </style>
       </Head>
 
