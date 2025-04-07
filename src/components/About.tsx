@@ -14,7 +14,7 @@ function About({pageDetails}: Props){
   }
 
   return (
-    <div className='flex flex-col text-center md:text-left md:flex-row relative h-screen max-w-7xl px-10 justify-evenly mx-auto items-center'>
+    <div className='flex flex-col text-center md:text-left md:flex-row relative h-screen max-w-7xl px-10 justify-evenly mx-auto items-center z-20'>
       <h3 className='headings'>About</h3>
       <motion.div
         initial={{
@@ -30,12 +30,25 @@ function About({pageDetails}: Props){
           alt="Profile"
           fill
           sizes="(max-width: 768px) 224px, (max-width: 1200px) 256px, 500px"
-          className='rounded-full object-cover md:rounded-lg'
+          className='rounded-full object-cover md:rounded-lg border-2 border-emerald-800'
           priority
         />
       </motion.div>
-      <div className='space-y-10 px-0 md:px-10'>
+      <div className='space-y-10 px-0 md:px-10 flex flex-col items-center w-full md:w-auto relative z-20'>
         <h4 className='text-4xl font-semi-bold text-stone-500'>{pageDetails.backgroundInformation}</h4>
+        <div className="w-full md:w-[400px] mt-8 relative z-20">
+          <iframe
+            style={{ borderRadius: '12px' }}
+            src="https://open.spotify.com/embed/playlist/5oMzmPEqco2Rw0FPxgLu3D?utm_source=generator"
+            width="100%"
+            height="120"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="rounded-lg relative z-20"
+          />
+        </div>
       </div>
     </div>
   )

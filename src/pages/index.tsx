@@ -52,7 +52,7 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
 
       <section id="about" className="snap-center relative">
         <div className="absolute inset-0 bg-nightsky opacity-85"></div>
-        <div className="relative z-10">
+        <div className="relative z-20">
           <About pageDetails={pageDetails}/>
         </div>
       </section>
