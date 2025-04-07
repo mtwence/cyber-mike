@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Project } from '../typings'
+import { urlFor } from '../utils/sanity'
 
 type Props = {
   projects: Project[];
@@ -18,7 +19,7 @@ function Projects({ projects }: Props) {
         <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mb-8 mt-8'>
            {projects.map((project) => {
              console.log(project);
-             const projectImageUrl = project.projectImage.asset.url;
+             const projectImageUrl = urlFor(project.projectImage).url();
              return (
               <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col items-center justify-center h-[calc(100vh-8rem)]'>
                   <div className='relative w-[500px] h-[300px] mb-2'>
@@ -35,7 +36,7 @@ function Projects({ projects }: Props) {
                       <p className='text-stone-600'>{project.summary}</p>
                       <div className='flex space-x-2 justify-center mb-4'>
                           {project.technologies.map((tech) => {
-                            const techImageUrl = tech.skillImage.asset.url;
+                            const techImageUrl = urlFor(tech.skillImage).url();
                             return (
                               <div key={tech._id} className='relative h-8 w-8'>
                                   <Image

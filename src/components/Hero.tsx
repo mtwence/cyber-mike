@@ -3,7 +3,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
 import Link from 'next/link'
 import { PageDetails } from '@/typings'
-import {urlFor} from '../sanity'
+import { urlFor } from '@/sanity'
 import Image from 'next/image'
 import CompanyPopup from './CompanyPopup'
 

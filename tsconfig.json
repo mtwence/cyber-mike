@@ -19,10 +19,9 @@
     "jsx": "preserve",
     "incremental": true,
     "types": ["react", "node"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["src/*"]
     },
     "plugins": [
       {

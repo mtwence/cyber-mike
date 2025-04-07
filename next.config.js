@@ -7,8 +7,8 @@ const nextConfig = {
   experimental: {
     serverActions: true,
   },
-  // Exclude the Sanity Studio route from the build
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js'].filter(ext => ext !== 'tsx' && ext !== 'jsx'),
+  // Exclude Sanity Studio from the build
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 }
 
 module.exports = nextConfig

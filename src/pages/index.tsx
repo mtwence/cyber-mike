@@ -2,22 +2,22 @@ import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import WorkXp from "@/components/WorkXp";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import ContactMe from "@/components/ContactMe";
-import Education from "@/components/Education";
-import ResumeButton from "@/components/ResumeButton";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import WorkXp from "../components/WorkXp";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import ContactMe from "../components/ContactMe";
+import Education from "../components/Education";
+import ResumeButton from "../components/ResumeButton";
 import {Experience, PageDetails, Project, Skill, Social, Education as EducationType} from "../typings"
-import { fetchSkills } from "@/utils/fetchSkills";
-import {fetchSocials} from "@/utils/fetchSocials";
-import { fetchExperiences } from "@/utils/fetchExperiences";
-import { fetchProjects } from "@/utils/fetchProjects";
-import { fetchPageDetails } from "@/utils/fetchPageDetails";
-import { fetchEducation } from "@/utils/fetchEducation";
+import { fetchSkills } from "../utils/fetchSkills";
+import {fetchSocials} from "../utils/fetchSocials";
+import { fetchExperiences } from "../utils/fetchExperiences";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchPageDetails } from "../utils/fetchPageDetails";
+import { fetchEducation } from "../utils/fetchEducation";
 
 type Props = {
   pageDetails: PageDetails;
