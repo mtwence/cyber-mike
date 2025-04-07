@@ -1,7 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './portfolio/schemaTypes'
+import schemaTypes from './schemas'
 
 export default defineConfig({
   name: 'default',
@@ -15,4 +15,10 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+
+  studio: {
+    components: {
+      // Add any custom components here if needed
+    }
+  }
 })
