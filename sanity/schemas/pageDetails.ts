@@ -11,7 +11,7 @@ export default {
         {
             name: "role",
             title: "Role",
-            type: "string",
+            type: "string"
         },
         {
             name: "heroImage",
@@ -20,11 +20,6 @@ export default {
             options: {
                 hotspot: true,
             }
-        },
-        {
-            name: "backgroundInformation",
-            title: "BackgroundInformation",
-            type: "string",
         },
         {
             name: "profilePic",
@@ -37,29 +32,27 @@ export default {
         {
             name: "phoneNumber",
             title: "PhoneNumber",
-            type: "string",
+            type: "string"
         },
         {
             name: "email",
             title: "Email",
-            type: "string",
+            type: "string"
         },
         {
             name: "address",
             title: "Address",
-            type: "string",
+            type: "string"
         },
         {
-            name: "socials",
-            title: "Socials",
-            type: "array",
-            of: [{type: "reference", to: {type: "social"}}]
+            name: "backgroundInformation",
+            title: "BackgroundInformation",
+            type: "string"
         },
         {
             name: "resume",
             title: "Resume",
-            type: "file",
-        },
-        
+            type: "file"
+        }
     ]
-}
+} 

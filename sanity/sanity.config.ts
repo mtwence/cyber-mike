@@ -1,20 +1,19 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
-import schemaTypes from './schemas';
+import schemaTypes from './schemas/index';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+// Use hardcoded values for now since we can't use dotenv in browser
+const projectId = 'x8k5zh5f';
+const dataset = 'production';
 
 export default defineConfig({
-  name: 'default',
-  title: 'cyber-mike',
-
+  basePath: '/studio',
+  name: 'Cyber_Mike_Studio',
+  title: 'Cyber Mike Studio',
   projectId,
   dataset,
-
   plugins: [deskTool(), visionTool()],
-
   schema: {
     types: schemaTypes,
   },
