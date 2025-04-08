@@ -35,7 +35,7 @@ function About({pageDetails}: Props){
         />
       </motion.div>
       <div className='space-y-10 px-0 md:px-10 flex flex-col items-center w-full md:w-auto relative z-20'>
-        <h4 className='text-4xl font-semi-bold text-stone-500'>{pageDetails.backgroundInformation}</h4>
+        <h4 className='text-4xl font-semi-bold text-stone-500 text-center bg-amber-50 rounded-full p-2 md:rounded-lg'>{pageDetails.backgroundInformation}</h4>
         <div className="w-full md:w-[400px] mt-8 relative z-20">
           <iframe
             style={{ borderRadius: '12px' }}
