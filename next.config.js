@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     domains: ['images.saymedia-content.com', 'cdn.sanity.io', 'user-images.githubusercontent.com'],
   },
-  experimental: {
-    serverActions: true,
-  },
   // Exclude Sanity Studio from the build
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 }
