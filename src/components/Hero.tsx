@@ -6,6 +6,7 @@ import { PageDetails } from '@/typings'
 import { urlFor } from '@/sanity'
 import Image from 'next/image'
 import CompanyPopup from './CompanyPopup'
+import { FaCog } from 'react-icons/fa'
 
 type Props = {
     pageDetails: PageDetails
@@ -40,6 +41,14 @@ function Hero({pageDetails }: Props) {
         setShowPopup(false);
     };
 
+    const handleGearClick = () => {
+        localStorage.removeItem('visitorCompany');
+        localStorage.removeItem('popupSkipped');
+        setCompany(null);
+        setIsSkipped(false);
+        setShowPopup(true);
+    };
+
     const [text] = useTypewriter({
         words: [
             `HOWDY, SPACE COWBOY, THE NAME'S ${pageDetails?.name}`,
@@ -70,14 +79,30 @@ function Hero({pageDetails }: Props) {
                             className='rounded-full object-cover'
                         />
                     </div>
-                    <h2 className='text-md font-medium uppercase text-stone-300 pb-2 tracking-[10px]'>
+                    <h2 className='text-md font-medium uppercase text-stone-300 pb-2 tracking-[10px] flex items-center justify-center'>
                         {company ? (
                             <>
                                 <span>Aspiring Employee</span>
-                                <span className='text-orange-600 ml-2'>@ {company}</span>
+                                <span className='text-orange-500 ml-2'>@ {company}</span>
+                                <button 
+                                    onClick={handleGearClick}
+                                    className="ml-10 text-stone-300 hover:text-orange-500 transition-colors pointer-events-auto"
+                                >
+                                    <FaCog className="w-5 h-5" />
+                                </button>
                             </>
                         ) : (
-                            pageDetails?.role
+                            <>
+                                {pageDetails?.role}
+                                {isSkipped && (
+                                    <button 
+                                        onClick={handleGearClick}
+                                        className="ml-10 text-emerald-800 hover:text-amber-300 transition-colors pointer-events-auto"
+                                    >
+                                        <FaCog className="w-5 h-5" />
+                                    </button>
+                                )}
+                            </>
                         )}
                     </h2>
                     <h1>
