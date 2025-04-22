@@ -31,10 +31,10 @@ function CompanyPopup({ onClose, onSave }: Props) {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-amber-50 border border-amber-300 p-8 rounded-lg shadow-lg max-w-md w-full mx-4 flex flex-col items-center"
+                className="bg-amber-50 border border-amber-300 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg max-w-[90vw] sm:max-w-md w-full mx-4 flex flex-col items-center"
             >
-                <h2 className="text-2xl font-bold text-emerald-800 mb-4 text-center">Welcome to My Portfolio</h2>
-                <p className="text-stone-500 mb-6 text-center">Please enter your company name to personalize your experience.</p>
+                <h2 className="text-xl sm:text-2xl font-bold text-emerald-800 mb-2 sm:mb-4 text-center">Welcome to My Portfolio</h2>
+                <p className="text-sm sm:text-base text-stone-500 mb-4 sm:mb-6 text-center">Please enter your company name to personalize your experience.</p>
                 
                 <form onSubmit={handleSubmit} className="w-full">
                     <input
@@ -42,21 +42,21 @@ function CompanyPopup({ onClose, onSave }: Props) {
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         placeholder="Enter company name"
-                        className="w-full px-4 py-2 bg-amber-100 text-stone-500 rounded-md border border-amber-300 focus:outline-none focus:border-amber-600"
+                        className="w-full px-3 sm:px-4 py-2 bg-amber-100 text-stone-500 rounded-md border border-amber-300 focus:outline-none focus:border-amber-600 text-sm sm:text-base"
                         required
                     />
                     
-                    <div className="mt-6 flex justify-center space-x-4">
+                    <div className="mt-4 sm:mt-6 flex justify-center space-x-3 sm:space-x-4">
                         <button
                             type="button"
                             onClick={onClose}
-                            className="px-4 py-2 text-stone-500 hover:text-emerald-800 transition-colors"
+                            className="px-3 sm:px-4 py-2 text-sm sm:text-base text-stone-500 hover:text-emerald-800 transition-colors"
                         >
                             Skip
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-emerald-800 text-stone-900 rounded-md hover:bg-amber-300 transition-colors"
+                            className="px-3 sm:px-4 py-2 text-sm sm:text-base bg-emerald-800 text-stone-900 rounded-md hover:bg-amber-300 transition-colors"
                         >
                             Save
                         </button>
