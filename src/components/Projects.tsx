@@ -16,7 +16,7 @@ function Projects({ projects }: Props) {
     <div className='h-screen relative flex overflow-hidden flex-col text-left md:text-left xl:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
       <h3 className='headings'>Projects</h3>
 
-      <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-32 mb-16 px-4 sm:px-0'>
+      <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-32 sm:mt-40 md:mt-48 mb-16 px-4 sm:px-0'>
         {projects.map((project) => {
           const projectImageUrl = urlFor(project.projectImage).url();
           return (
