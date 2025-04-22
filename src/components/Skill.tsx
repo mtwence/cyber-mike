@@ -23,19 +23,6 @@ function Skill({directionLeft, skill}: Props) {
         return 'bg-amber-50';
     }
   };
-
-  const getProgressText = (progress: string) => {
-    switch (progress) {
-      case 'novice':
-        return 'Novice';
-      case 'journeyman':
-        return 'Journeyman';
-      case 'master':
-        return 'Master';
-      default:
-        return progress;
-    }
-  };
   
   return (
     <div className='group relative flex cursor-pointer'>
@@ -57,8 +44,7 @@ function Skill({directionLeft, skill}: Props) {
           />
         </motion.div>
         <div className={`absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out ${getProgressColor(skill.progress)} h-20 w-20 md:w-24 md:h-24 xl:w-28 xl:h-28 rounded-full z-0`}>
-            <div className='flex flex-col items-center justify-center h-full space-y-1'>
-                <p className='text-sm font-bold text-stone-600'>{getProgressText(skill.progress)}</p>
+            <div className='flex items-center justify-center h-full'>
                 <p className='text-sm font-bold text-stone-600'>{skill.skillTitle}</p>
             </div>
         </div>

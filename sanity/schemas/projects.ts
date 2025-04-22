@@ -4,13 +4,13 @@ export default {
     type: "document",
     fields: [
         {
-            name: "title",
-            title: "Title",
+            name: "projectTitle",
+            title: "Project Title",
             type: "string"
         },
         {
-            name: "image",
-            title: "Image",
+            name: "projectImage",
+            title: "Project Image",
             type: "image",
             options: {
                 hotspot: true,
@@ -28,13 +28,19 @@ export default {
             of: [{ type: "reference", to: { type: "skill" } }]
         },
         {
-            name: "linkToBuild",
-            title: "LinkToBuild",
+            name: "points",
+            title: "Project Points",
+            type: "array",
+            of: [{ type: "string" }]
+        },
+        {
+            name: "websiteLink",
+            title: "Website Link",
             type: "url"
         },
         {
-            name: "linkToGitHub",
-            title: "LinkToGitHub",
+            name: "repoLink",
+            title: "Repository Link",
             type: "url"
         }
     ]

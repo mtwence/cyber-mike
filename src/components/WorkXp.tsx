@@ -1,6 +1,6 @@
 import React from 'react'
-import { motion, MotionConfig } from "framer-motion"
-import XPCards from './XPCards'
+import { motion } from "framer-motion"
+import ExperienceCard from './ExperienceCard'
 import { Experience} from '@/typings'
 
 type Props = {
@@ -28,7 +28,7 @@ function WorkXp({ experience }: Props) {
       
       <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory mt-16 mb-16 justify-center'>
         {sortedExperience?.map((exp) => (
-          <XPCards key={exp._id} experience={exp} />
+          <ExperienceCard key={exp._id} experience={exp} />
         ))}
       </div>
 

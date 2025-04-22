@@ -22,18 +22,18 @@ export default {
             }
         },
         {
-            name: "dateStarted",
-            title: "DateStarted",
+            name: "startDate",
+            title: "StartDate",
             type: "date"
         },
         {
-            name: "dateEnded",
-            title: "DateEnded",
+            name: "endDate",
+            title: "EndDate",
             type: "date"
         },
         {
-            name: "isCurrentlyWorkingHere",
-            title: "IsCurrentlyWorkingHere",
+            name: "currentlyWorking",
+            title: "CurrentlyWorking",
             type: "boolean"
         },
         {
@@ -47,6 +47,39 @@ export default {
             title: "Points",
             type: "array",
             of: [{ type: "string" }]
+        },
+        {
+            name: "linkUrl",
+            title: "LinkUrl",
+            type: "object",
+            fields: [
+                {
+                    name: "type",
+                    title: "Type",
+                    type: "string",
+                    options: {
+                        list: [
+                            { title: "URL", value: "url" },
+                            { title: "File", value: "file" }
+                        ]
+                    }
+                },
+                {
+                    name: "url",
+                    title: "URL",
+                    type: "url"
+                },
+                {
+                    name: "file",
+                    title: "File",
+                    type: "file"
+                }
+            ]
+        },
+        {
+            name: "linkTitle",
+            title: "LinkTitle",
+            type: "string"
         }
     ]
 } 

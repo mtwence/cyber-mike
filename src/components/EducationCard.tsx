@@ -41,19 +41,21 @@ function EducationCard({ education }: Props) {
   });
 
   return (
-    <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden bg-white border border-stone-200 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
-      <div className="relative w-full h-[300px] overflow-hidden">
-        <Image
-          className="rounded-t-lg object-cover w-full h-full"
-          src={urlFor(education.schoolImage).url()}
-          alt={education.school}
-          fill
-          sizes="(max-width: 768px) 300px, (max-width: 1200px) 400px, 450px"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.src = '/placeholder-school.png';
-          }}
-        />
+    <div className="flex flex-col items-center space-y-7 flex-shrink-0 w-[300px] md:w-[400px] xl:w-[450px] max-h-[700px] snap-center mt-20 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden bg-amber-50 border-2 border-amber-300 rounded-lg shadow dark:bg-stone-800 dark:border-stone-700">
+      <div className="relative w-full h-[200px] md:h-[250px] xl:h-[280px] overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center bg-amber-50">
+          <Image
+            className="rounded-t-lg object-contain w-full h-full p-4"
+            src={urlFor(education.schoolImage).url()}
+            alt={education.school}
+            fill
+            sizes="(max-width: 768px) 300px, (max-width: 1200px) 400px, 450px"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = '/placeholder-school.png';
+            }}
+          />
+        </div>
       </div>
       <div className="px-0 md:px-10 pb-3">
         <h4 className="text-stone-500 text-4xl font-light">{education.school}</h4>
