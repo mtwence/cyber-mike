@@ -44,9 +44,9 @@ const ResumeButton = ({ pageDetails }: { pageDetails: PageDetails }) => {
   };
 
   return (
-    <motion.div className="fixed bottom-24 right-20 z-50">
+    <motion.div className="fixed bottom-8 right-4 sm:bottom-24 sm:right-20 z-50">
       <motion.button
-        className="w-32 h-40 cursor-pointer relative"
+        className="w-20 h-24 sm:w-32 sm:h-40 cursor-pointer relative"
         onClick={handleLaunch}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -68,7 +68,7 @@ const ResumeButton = ({ pageDetails }: { pageDetails: PageDetails }) => {
       </motion.button>
       {isHovered && (
         <motion.span 
-          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 text-lg font-bold text-red-500 p-2 z-10 font-arcade animate-pulse"
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 text-sm sm:text-lg font-bold text-red-500 p-2 z-10 font-arcade animate-pulse"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}

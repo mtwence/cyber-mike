@@ -30,9 +30,10 @@ type Props = {
 
 const Home = ({pageDetails, experience, projects, skills, socials, education}: Props) => {
   return (
-    <div className="text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar --webkit-scrollbar-thumb-emerald-500">
+    <div className="text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-thumb-emerald-500/50 scrollbar-track-transparent">
       <Head>
         <title>Cyber Mike</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <style>
           @import
           url(&apos;https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&apos;);
@@ -43,49 +44,49 @@ const Home = ({pageDetails, experience, projects, skills, socials, education}: P
       <Header socials={socials}/>
       <ResumeButton pageDetails={pageDetails}/>
 
-      <section id="hero" className="snap-start relative">
+      <section id="hero" className="snap-start relative min-h-screen">
         <div className="absolute inset-0 bg-space opacity-90"></div>
         <div className="relative z-10">
           <Hero pageDetails={pageDetails}/>
         </div>
       </section>
 
-      <section id="about" className="snap-center relative">
+      <section id="about" className="snap-center relative min-h-screen">
         <div className="absolute inset-0 bg-nightsky opacity-85"></div>
         <div className="relative z-20">
           <About pageDetails={pageDetails}/>
         </div>
       </section>
 
-      <section id="experience" className="snap-center relative">
+      <section id="experience" className="snap-center relative min-h-screen">
         <div className="absolute inset-0 bg-dawn opacity-80"></div>
         <div className="relative z-10">
           <WorkXp experience={experience}/>
         </div>
       </section>
 
-      <section id="education" className="snap-center relative">
+      <section id="education" className="snap-center relative min-h-screen">
         <div className="absolute inset-0 bg-blend opacity-70"></div>
         <div className="relative z-10">
           <Education education={education}/>
         </div>
       </section>
 
-      <section id="skills" className="snap-start relative">
+      <section id="skills" className="snap-start relative min-h-screen">
         <div className="absolute inset-0 bg-sky opacity-60"></div>
         <div className="relative z-10">
           <Skills skills={skills} />
         </div>
       </section>
 
-      <section id="projects" className="snap-start relative">
+      <section id="projects" className="snap-start relative min-h-screen">
         <div className="absolute inset-0 bg-mountains opacity-60"></div>
         <div className="relative z-10">
           <Projects projects={projects} />
         </div>
       </section>
 
-      <section id="contact" className="snap-start relative">
+      <section id="contact" className="snap-start relative min-h-screen">
         <div className="absolute inset-0 bg-land opacity-60"></div>
         <div className="relative z-10">
           <ContactMe pageDetails={pageDetails} />

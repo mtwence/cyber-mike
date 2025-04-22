@@ -33,19 +33,19 @@ function Skill({directionLeft, skill}: Props) {
         }}
         transition={{duration: 1}}
         whileInView={{opacity:1, x:0}}
-        className='relative w-20 h-20 md:w-24 md:h-24 xl:w-28 xl:h-28'
+        className='relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28'
         >
           <Image
             src={urlFor(skill.skillImage).url()}
             alt={skill.skillTitle}
             fill
-            sizes="(max-width: 768px) 80px, (max-width: 1200px) 96px, 112px"
+            sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, (max-width: 1024px) 80px, (max-width: 1280px) 96px, 112px"
             className='rounded-full border-2 border-emerald-800 object-cover filter group-hover:grayscale transition duration-300 ease-in-out'
           />
         </motion.div>
-        <div className={`absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out ${getProgressColor(skill.progress)} h-20 w-20 md:w-24 md:h-24 xl:w-28 xl:h-28 rounded-full z-0`}>
+        <div className={`absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out ${getProgressColor(skill.progress)} h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 xl:h-28 xl:w-28 rounded-full z-0`}>
             <div className='flex items-center justify-center h-full'>
-                <p className='text-sm font-bold text-stone-600'>{skill.skillTitle}</p>
+                <p className='text-[10px] sm:text-xs md:text-sm font-bold text-stone-600 px-2 text-center'>{skill.skillTitle}</p>
             </div>
         </div>
     </div>

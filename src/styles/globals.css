@@ -4,22 +4,23 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 8px;
 }
  
 /* Track */
-
+::-webkit-scrollbar-track {
+    background: transparent;
+}
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #065f46;
     border-radius: 5px;
-  
 }
  
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #fcd34d
+    background: #fcd34d;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -28,9 +29,10 @@
     font-family: "game";
     src: url(/GamePlayed-vYL7.ttf);
 }
+
 @layer components {
     .navButton {
-        @apply px-4 py-2 border border-transparent rounded-full uppercase text-sm font-semibold tracking-widest text-emerald-800 transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-amber-300 duration-300  mx-2
+        @apply px-3 py-1.5 sm:px-4 sm:py-2 border border-transparent rounded-full uppercase text-xs sm:text-sm font-semibold tracking-widest text-emerald-800 transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-amber-300 duration-300 mx-1 sm:mx-2
     }
 
     .socials {
@@ -38,13 +40,35 @@
     }
 
     .headings {
-       @apply absolute top-24 uppercase tracking-[20px] text-orange-500 font-medium text-2xl font-arcade animate-bounce
+       @apply absolute top-16 sm:top-24 uppercase tracking-[10px] sm:tracking-[20px] text-orange-500 font-medium text-xl sm:text-2xl font-arcade animate-bounce
     }
 
     .contact {
-        @apply placeholder-stone-500 outline-none rounded-lg px-6 py-4 text-orange-500 transition-all  border focus:border-amber-300 focus:text-orange-300 hover:border-amber-300
+        @apply placeholder-stone-500 outline-none rounded-lg px-4 sm:px-6 py-3 sm:py-4 text-orange-500 transition-all border focus:border-amber-300 focus:text-orange-300 hover:border-amber-300
     }
    
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent text size adjustment on orientation change */
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    /* Improve touch targets */
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }
 
 

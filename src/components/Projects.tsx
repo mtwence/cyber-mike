@@ -13,48 +13,48 @@ function Projects({ projects }: Props) {
   }
 
   return (
-    <div className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
-      <h3 className='headings absolute top-20'>Projects</h3>
+    <div className='h-screen relative flex overflow-hidden flex-col text-left md:text-left xl:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
+      <h3 className='headings'>Projects</h3>
 
-      <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-32 mb-16'>
+      <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 mt-32 mb-16 px-4 sm:px-0'>
         {projects.map((project) => {
           const projectImageUrl = urlFor(project.projectImage).url();
           return (
             <div 
               key={project._id} 
-              className='w-screen flex-shrink-0 snap-center flex flex-col items-center justify-center h-[calc(100vh-8rem)] relative group'
+              className='w-screen flex-shrink-0 snap-center flex flex-col items-center justify-center h-[calc(100vh-8rem)] relative group px-4 sm:px-0'
             >
-              <div className='relative w-[500px] h-[300px] mb-2'>
+              <div className='relative w-full max-w-[500px] h-[200px] sm:h-[250px] md:h-[300px] mb-4'>
                 <Image 
                   src={projectImageUrl}
                   alt={project.projectTitle}
                   fill
-                  sizes="(max-width: 768px) 100vw, 500px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 500px"
                   className='object-contain'
                 />
               </div>
               <div className='space-y-4 w-full max-w-2xl text-center relative p-4'>
                 <div className='absolute inset-0 bg-amber-50/60 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg shadow-lg'></div>
                 <div className='relative z-10'>
-                  <h4 className='text-stone-500 text-2xl font-bold'>{project.projectTitle}</h4>
-                  <p className='text-stone-600'>{project.summary}</p>
-                  <div className='flex space-x-2 justify-center mb-4'>
+                  <h4 className='text-stone-500 text-xl sm:text-2xl font-bold'>{project.projectTitle}</h4>
+                  <p className='text-stone-600 text-sm sm:text-base'>{project.summary}</p>
+                  <div className='flex flex-wrap justify-center gap-2 my-4'>
                     {project.technologies.map((tech) => {
                       const techImageUrl = urlFor(tech.skillImage).url();
                       return (
-                        <div key={tech._id} className='relative h-8 w-8'>
+                        <div key={tech._id} className='relative h-6 w-6 sm:h-8 sm:w-8'>
                           <Image
                             src={techImageUrl}
                             alt={tech.skillTitle}
                             fill
-                            sizes="32px"
+                            sizes="(max-width: 640px) 24px, 32px"
                             className='rounded-full object-contain'
                           />
                         </div>
                       );
                     })}
                   </div>
-                  <ul className='list-disc list-inside text-stone-600 space-y-2'>
+                  <ul className='list-disc list-inside text-stone-600 space-y-2 text-sm sm:text-base'>
                     {project.points && project.points.length > 0 ? (
                       project.points.map((point, index) => (
                         <li key={index}>{point}</li>
@@ -69,10 +69,10 @@ function Projects({ projects }: Props) {
                         href={project.websiteLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className='w-12 h-12 flex items-center justify-center bg-emerald-800 rounded-full hover:bg-amber-300 transition-colors duration-200'
+                        className='w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-emerald-800 rounded-full hover:bg-amber-300 transition-colors duration-200'
                       >
                         <svg 
-                          className="w-6 h-6 text-amber-50" 
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-amber-50" 
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24" 
@@ -92,10 +92,10 @@ function Projects({ projects }: Props) {
                         href={project.repoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className='w-12 h-12 flex items-center justify-center bg-emerald-800 rounded-full hover:bg-amber-300 transition-colors duration-200'
+                        className='w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-emerald-800 rounded-full hover:bg-amber-300 transition-colors duration-200'
                       >
                         <svg 
-                          className="w-6 h-6 text-amber-50" 
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-amber-50" 
                           fill="currentColor" 
                           viewBox="0 0 24 24" 
                           xmlns="http://www.w3.org/2000/svg"
