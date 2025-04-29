@@ -46,17 +46,21 @@ export default function HomeButton({}: Props) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-1 left-1/2 transform -translate-x-1/2 z-50"
+          className="fixed bottom-4 left-0 right-0 z-[999]"
         >
-          <Link href="/#hero">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-emerald-800/60 p-3 rounded-full cursor-pointer hover:bg-amber-300 transition-colors duration-200"
-            >
-              <HomeIcon className="h-6 w-6 text-emerald-800 group-hover:text-amber-300" />
-            </motion.div>
-          </Link>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
+            <div className="flex justify-center">
+              <Link href="/#hero">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="bg-emerald-800/60 p-3 rounded-full cursor-pointer hover:bg-amber-300 transition-colors duration-200"
+                >
+                  <HomeIcon className="h-6 w-6 text-emerald-800 group-hover:text-amber-300" />
+                </motion.div>
+              </Link>
+            </div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

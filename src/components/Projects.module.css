@@ -1,0 +1,28 @@
+.scrollContainer {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: rgb(16, 185, 129, 0.5);
+  border-radius: 5px;
+  cursor: grab;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgb(251, 191, 36);
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:active {
+  cursor: grabbing;
+} 
