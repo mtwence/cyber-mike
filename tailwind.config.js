@@ -19,10 +19,10 @@ module.exports = {
         'dawn': "url('/dawn.png')",
         'sky': "url('/bluesky2.png')",
         'blend': "url('/blended22.png')",
-        'mountains': "url('/mountains.png')",
+        'mountains': "url('/mountains3.png')",
         'space': "url('/space3.png')",
         'spaceold': "url('/spaceold.png')",
-        'land': "url('/land.png')",
+        'land': "url('/land2.png')",
       },
       fontFamily: {
         'matrix': ['"Press Start 2P"', 'sans-serif'],

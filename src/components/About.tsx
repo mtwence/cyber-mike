@@ -31,14 +31,14 @@ export default function About({pageDetails}: Props) {
           <h4 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semi-bold text-stone-800 text-center bg-amber-50 border-2 border-amber-300 rounded-lg p-4 sm:p-6 md:p-8'>{pageDetails.backgroundInformation}</h4>
         </div>
         <div className="w-full md:w-[500px] lg:w-[600px] xl:w-[700px] mt-2 sm:mt-4 relative z-20">
-          <iframe
+          <iframe 
             style={{ borderRadius: '12px' }}
             src="https://open.spotify.com/embed/playlist/5oMzmPEqco2Rw0FPxgLu3D?utm_source=generator"
             width="100%"
             height="120"
             frameBorder="0"
             allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
             loading="lazy"
             className="rounded-lg relative z-20"
           />
